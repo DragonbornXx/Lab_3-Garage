@@ -1,14 +1,15 @@
 package org.example.beans;
 
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Component
 public class Tool {
-    private String name;
+    @Autowired
+    private Mechanic mechanic;
 
-    public Tool(String name) {
-        this.name = name;
+    public void useGarageMethod() {
+        mechanic.someGarageMethod();
     }
 
-    @Override
-    public String toString() {
-        return "Tool [name=" + name + "]";
-    }
 }
